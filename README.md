@@ -159,3 +159,8 @@ C++Now 2019 - Flug Auditorium, Aspen Physics Center, Aspen, Colorado
 sol2 is distributed with an MIT License. You can see LICENSE.txt for more info.
 
 If you need a custom solution, [feel free to reach out](https://soasis.org/contact/opensource/).
+
+
+
+
+hey. rod here. maybe fix your emplace function
