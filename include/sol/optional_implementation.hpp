@@ -2186,9 +2186,12 @@ namespace sol {
 		/// one.
 		///
 		/// \group emplace
-		T& emplace(T& arg) noexcept {
+		template <class... Args>
+		T& emplace(Args&&... args) noexcept {
+			static_assert(std::is_constructible<T, Args&&...>::value, "T must be constructible with Args");
+
 			*this = nullopt;
-			m_value = &arg;
+			new (static_cast<void*>(this)) optional(std::in_place, std::forward<Args>(args)...);
 			return **this;
 		}
 
